@@ -38,11 +38,12 @@
       }
       h4#twit-name
       {
+
         color: grey;
       }
       button#btn
       {
-        background-color: #1da1f2;
+        background-color: #66b3ff;
         color: white;
 
         margin-left: 480px;
@@ -67,6 +68,10 @@
 
 
       }
+      div#description
+      {
+        margin-top:20px;
+      }
       div#retweets
       {
 
@@ -80,16 +85,57 @@
       {
         color: gray;
       }
+      #retweets
+      {
+
+      display: flex;
+    }
+
+    #retweets div {
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 40px;
+    }
       p#retweets
       {
         color:#1da1f2;
+
+      }
+      p#desc
+      {
+        font-size: 20px;
+      }
+      h4#ret-txt
+      {
+        margin-right: 15px;
       }
       p#likes{
         color:#1da1f2;
       }
+      p#current-time
+      {
+        color: gray;
+        font-size: 1.5rem;
+      }
+      img#textarea
+      {
+        border-radius: 100%;
+      }
       footer
       {
         display: flex;
+      }
+      form#tweet
+      {
+        background-color: #99ccff;
+        height: 100px;
+        width: 100%;
+
+      }
+      form input
+      {
+        margin-top: 30px;
+
       }
       footer#bottom
       {
@@ -121,9 +167,11 @@
        incrementcnt--;
        }
      }
+
       </script>
     </head>
     <body>
+
       <header>
         <img id="me" height="80px" width="80px" src="me.jpeg">
 
@@ -141,17 +189,32 @@
       <main id = "main">
 
         <div id="profile-status" >
+
+          <div id ="description">
+            <b><p id="desc">
+              I hope for a better tomorrow by working today to discipline myself today so that tomorrow I can reep my benefits.
+              It may be hard to believe, but discipline provides freedom. "We should all attempt to reach a point in our lives where our minds
+              can be liberated by discipline."
+              <p></b>
+          </div>
           <hr/>
-          <div id="retweets">
-            <b><h4 id="ret-txt">RETWEETS</h4><h4><p id="retweets">612</p></h4></b>
+          <div id="retweets" style="height:60px;">
+            <h4 id="ret-txt">RETWEETS<p id="retweets">612</p></h4>
+
+
+
+            <h4 id="lik-txt">LIKES<p id="likes">5642</p></h4>
+
           </div>
 
-          <div id="likes">
-            <h4 id="lik-txt">LIKES</h4><p id="likes">5642</p>
+
+
+
+
+
+          <hr/>
+          <p id="current-time"></p>
             <button type="button" onclick="incrementLikes()"><img id="text" src="unlike.png" height="20px" width="20px"></button>
-          </div>
-
-          <hr/>
        </div>
 
 
@@ -159,31 +222,33 @@
 
       <footer id = "footer">
 
-        <div id="bottom">
 
 
 
 
 
 
-          <div id="post-time">
-            <?php
 
 
-            ?>
-          </div>
 
-          <div id="twitter-btns">
+        <form id="tweet">
 
-
-         </div>
-
-         </div>
          <input type="text" class="form-control" placeholder="Tweet your reply" >
-         </div>
 
-       <div>
+       </form>
+
       </footer>
+  
+
+      <script>
+      function run()
+      {
+        var d = new Date();
+        var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
+      document.getElementById("current-time").innerHTML = d.getHours()+":"+d.getMinutes()+" AM"+" - "+ d.getDate() + " " + months[d.getMonth()] +" " +  d.getFullYear();
+      }
+      run();
+    </script>
 
     </body>
 </html>
