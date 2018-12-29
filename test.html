@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <title>Increment Retweets</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+      <link rel="stylesheet" href="stylce.css">
+
+
+    </head>
+    <body>
+
+      <script>
+      let Num_Of_Likes = 0;
+      let Num_Of_Retweets= 0;
+
+      function incrementLikes()
+      {
+        Num_Of_Likes++;
+      }
+
+      function incrementRetweets()
+      {
+        Num_Of_Retweets++;
+      }
+
+      function countRetweets()
+      {
+
+      }
+
+      function rtrnNumOfRetweets()
+      {
+        return Num_Of_Retweets;
+      }
+
+      function rtrnNumOfLikes()
+      {
+        return Num_Of_Likes;
+      }
+
+
+
+      </script>
+
+          <div class="retweets">
+            <h4>RETWEETS</h4>
+            <p id="retweets"></p>
+            <button onclick="incrementRetweets()">Increase Retweets</button>
+
+          </div>
+
+<script>
+  document.getElementById("retweets").innerHTML = rtrnNumOfRetweets();
+</script>
+
+          <div class="likes">
+            <h4>LIKES</h4>
+          </div>
+
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!-- Website that allows you to change the amount of likes, but only once and not anymore than once,
+and you can only unlike once you have liked-->
+
+<!doctype html>
+<html>
+<head>
+<title>Score Changer</title>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js" integrity="sha384-zDnhMsjVZfS3hiP7oCBRmfjkQC4fzxVxFhBx8Hkz2aZX8gEvA/jsP3eXRCvzTofP" crossorigin="anonymous"></script>
+</head>
+<body>
+<script>
+  var cnt = 0;
+
+  function change()
+  {
+    if(cnt == 0)
+    {
+      document.getElementById('text').src = 'like.png';
+      cnt++;
+    }
+     else
+    {
+          document.getElementById('text').src = 'unlike.png';
+          cnt--;
+    }
+}
+
+ </script>
+<html>
+<h3>Realistic 'Likes' Button, Lets You Like Once And Unlike Once</h3>
+<b>Likes: </b><p id="likes">5642</p>
+<button type="button" onclick="change()"><img id="text" src="unlike.png" height="20px" width="20px"></button>
+
+
+</body>
+
+</html>
